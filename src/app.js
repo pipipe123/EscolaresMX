@@ -4,10 +4,12 @@ import morgan from 'morgan'
 // import cookieParser from 'cookie-parser'
 // import taskRoutes from './routes/tasks.routes.js'
 import services from './routes/services.routes.js'
+import componentes from './routes/componentes.routes.js'
+
 import cors from 'cors'
 const app = express()
 
-app.use(cors({origin:"http://localhost:5173",
+app.use(cors({origin:"http://localhost:8081",
 credentials: true // Habilitar el envío de credenciales
 }))
 
@@ -29,6 +31,8 @@ app.use(function(req, res, next) {
 // app.use('/api',authRoutes)
 // app.use('/api',taskRoutes)
 app.use('/test',services)
+app.use('/api',componentes)
+
 
 
 
